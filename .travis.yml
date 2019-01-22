@@ -3,14 +3,13 @@ services:
   - docker 
   
 before_install:
-  - docker build -t gcetin/React-Docker-TravisCI-ElasticBeanstalk -f Dockerfile.dev .
+  - docker build -t gcetin/react-docker-travisci-elasticbeanstalk -f Dockerfile.dev .
 
 
 #-- --coverage is to launch to prompt after execute npm run test command. since when only npm run test is run, it's not exiting to prompt and 
 # is requesting other input in prompt interface from keyboard like p,t etc. so 
 script: 
-  - docker run gcetin/React-Docker-TravisCI-ElasticBeanstalk npm run test -- --coverage
+  - docker run gcetin/react-docker-travisci-elasticbeanstalk npm run test -- --coverage
 
 
 
-  
